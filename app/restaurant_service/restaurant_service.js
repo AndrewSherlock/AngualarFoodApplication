@@ -14,11 +14,11 @@ const review_1 = require("../review/review");
 let RestaurantService = class RestaurantService {
     constructor() {
         this.restaurantList = [];
-        this.getJsonText();
-        /* this.restaurantList[0] = new Restaurant(0, "Macari", "Main street", "01-2222", "Dunboyne", 0, "Fast food");
-         this.restaurantList[1] = new Restaurant(1, "La Bucca", "Main street", "01-2221", "Ashbourne", 0, "Italian");
-         this.restaurantList[2] = new Restaurant(2, "Restaurant on dublin", "Main street", "01-2222", "Dunboyne", 1, "Fast food");
-         this.restaurantList[3] = new Restaurant(3, "Restaurant in kildare", "Main street", "01-2222", "Dunboyne", 2, "Fast food"); */
+        // this.getJsonText();
+        this.restaurantList[0] = new Restaurant(0, "Macari", "Main street", "01-2222", "Dunboyne", 0, "Fast food");
+        this.restaurantList[1] = new Restaurant(1, "La Bucca", "Main street", "01-2221", "Ashbourne", 0, "Italian");
+        this.restaurantList[2] = new Restaurant(2, "Restaurant on dublin", "Main street", "01-2222", "Dunboyne", 1, "Fast food");
+        this.restaurantList[3] = new Restaurant(3, "Restaurant in kildare", "Main street", "01-2222", "Dunboyne", 2, "Fast food");
     }
     getJsonText() {
         let text;
@@ -98,12 +98,12 @@ class Restaurant {
         this.town = town;
         this.countyid = countyid;
         this.cuisineType = cuisineType;
-        this.review = [];
+        this.review = [new review_1.Review(3, "comment", "commenter"), new review_1.Review(3, "remark", "remarker")];
         this.openingTimes = [];
         this.score = this.getAverageReviewScore();
         this.menu = new Menu();
-        this.getOpeningTimesFromFile();
-        this.getReviewsFromFile();
+        /* this.getOpeningTimesFromFile(); */
+        /* this.getReviewsFromFile(); */
         this.score = this.getAverageReviewScore();
     }
     getReviewsFromFile() {
@@ -187,13 +187,13 @@ class Menu {
                     self.starters[i] = new Product(text['menu']['starters'][i].name, text['menu']['starters'][i].price);
                 }
                 for (let i = 0; i < text['menu']['main'].length; i++) {
-                    self.starters[i] = new Product(text['menu']['main'][i].name, text['menu']['main'][i].price);
+                    self.dinners[i] = new Product(text['menu']['main'][i].name, text['menu']['main'][i].price);
                 }
                 for (let i = 0; i < text['menu']['deserts'].length; i++) {
-                    self.starters[i] = new Product(text['menu']['deserts'][i].name, text['menu']['deserts'][i].price);
+                    self.deserts[i] = new Product(text['menu']['deserts'][i].name, text['menu']['deserts'][i].price);
                 }
                 for (let i = 0; i < text['menu']['drinks'].length; i++) {
-                    self.starters[i] = new Product(text['menu']['drinks'][i].name, text['menu']['drinks'][i].price);
+                    self.drinks[i] = new Product(text['menu']['drinks'][i].name, text['menu']['drinks'][i].price);
                 }
             };
         };

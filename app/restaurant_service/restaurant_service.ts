@@ -12,11 +12,11 @@ export class RestaurantService
     
     constructor()
     {   
-        this.getJsonText();
-       /* this.restaurantList[0] = new Restaurant(0, "Macari", "Main street", "01-2222", "Dunboyne", 0, "Fast food");
+       // this.getJsonText();
+        this.restaurantList[0] = new Restaurant(0, "Macari", "Main street", "01-2222", "Dunboyne", 0, "Fast food");
         this.restaurantList[1] = new Restaurant(1, "La Bucca", "Main street", "01-2221", "Ashbourne", 0, "Italian");
         this.restaurantList[2] = new Restaurant(2, "Restaurant on dublin", "Main street", "01-2222", "Dunboyne", 1, "Fast food");
-        this.restaurantList[3] = new Restaurant(3, "Restaurant in kildare", "Main street", "01-2222", "Dunboyne", 2, "Fast food"); */
+        this.restaurantList[3] = new Restaurant(3, "Restaurant in kildare", "Main street", "01-2222", "Dunboyne", 2, "Fast food"); 
         
       
     }
@@ -130,7 +130,7 @@ export class RestaurantService
 
 export class Restaurant
 {
-    private review : Review[] = [];
+    private review : Review[] = [new Review(3, "comment", "commenter"), new Review(3, "remark", "remarker")];
     private openingTimes : String[] = [];
     private score : Number;
     
@@ -141,8 +141,8 @@ export class Restaurant
         this.score = this.getAverageReviewScore();
         this.menu = new Menu();
         
-        this.getOpeningTimesFromFile();
-        this.getReviewsFromFile();
+       /* this.getOpeningTimesFromFile(); */
+       /* this.getReviewsFromFile(); */
         this.score = this.getAverageReviewScore();
     }
     
@@ -261,17 +261,17 @@ export class Menu{
                 
                  for(let i = 0; i < text['menu']['main'].length; i++)
                 {
-                    self.starters[i] = new Product(text['menu']['main'][i].name, text['menu']['main'][i].price); 
+                    self.dinners[i] = new Product(text['menu']['main'][i].name, text['menu']['main'][i].price); 
                 }
                 
                  for(let i = 0; i < text['menu']['deserts'].length; i++)
                 {
-                    self.starters[i] = new Product(text['menu']['deserts'][i].name, text['menu']['deserts'][i].price); 
+                    self.deserts[i] = new Product(text['menu']['deserts'][i].name, text['menu']['deserts'][i].price); 
                 }
                 
                  for(let i = 0; i < text['menu']['drinks'].length; i++)
                 {
-                    self.starters[i] = new Product(text['menu']['drinks'][i].name, text['menu']['drinks'][i].price); 
+                    self.drinks[i] = new Product(text['menu']['drinks'][i].name, text['menu']['drinks'][i].price); 
                 }
             };  
         };

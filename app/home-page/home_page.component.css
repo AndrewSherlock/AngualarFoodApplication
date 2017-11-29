@@ -1,0 +1,60 @@
+.home_page{
+    margin-top: -5%;
+}
+
+.home_page .slideShow #myCarousel .carousel-inner .active .carousel-caption{
+    margin-bottom: -50px;
+    background-color:antiquewhite;
+    color:chocolate;
+    font-family: 'Vollkorn SC', serif;
+    font-style: italic;
+    border-top-right-radius: 20px;
+}
+
+.container .row{
+    background-color:azure;
+    width: 70%;
+    margin: 60px auto;
+}
+
+
+.container .row .col-centered .designer{
+    width: 75%;
+    height: 450px;
+    text-align:left;
+    margin: 0 auto;
+}
+
+.container .row .col-centered .designer h4{
+    font-family: 'Vollkorn SC', serif;
+    font-style: italic;
+    color: chocolate;
+    text-align: center;
+    font-size: 3em;
+}
+
+
+
+.container .row .col-centered .designer p:first-letter{
+    font-family: 'Vollkorn SC', serif;
+    color: chocolate;
+    font-weight: 400;
+    font-size: 3em;
+}
+
+.container .row .col-centered .designer p{
+    font-family: 'Vollkorn SC', serif;
+    color: black;
+    
+    font-size: 1.2em;
+}
+
+.container .row .col-centered .designer .sign{
+    font-family: 'Pacifico', cursive;
+}
+
+.container .row .col-centered .designer img{
+    margin-top: -24%;
+    margin-left: 39%;
+    width: 90%;
+}

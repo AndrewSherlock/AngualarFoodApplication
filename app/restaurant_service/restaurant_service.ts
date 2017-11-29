@@ -130,7 +130,7 @@ export class RestaurantService
 
 export class Restaurant
 {
-    private review : Review[] = [new Review(3, "tis fine", "peter"), new Review(1, "meh", "paul")];
+    private review : Review[] = [];
     private openingTimes : String[] = [];
     private score : Number;
     
@@ -142,6 +142,8 @@ export class Restaurant
         this.menu = new Menu();
         
         this.getOpeningTimesFromFile();
+        this.getReviewsFromFile();
+        this.score = this.getAverageReviewScore();
     }
     
     getReviewsFromFile()
@@ -149,7 +151,7 @@ export class Restaurant
         let text;
         var self = this;
         var request = new XMLHttpRequest();
-        request.open('GET', '../../json/openingTimes'+ this.id+'.json', true);
+        request.open('GET', '../../json/comments/comments'+ this.id + '.json', true);
             
         request.responseType = 'blob';
         request.onload = function() {
@@ -160,9 +162,9 @@ export class Restaurant
                 text = reader.result;
                 text = JSON.parse(text);
             
-                for(let i = 0; i < text['openingTimes']['open'].length; i++)
+                for(let i = 0; i < text['commentList']['comment'].length; i++)
                 {
-                    self.openingTimes[i] = text['openingTimes']['open'][i].value;     
+                    self.review[i] = new Review(text['commentList']['comment'][i].rating, text['commentList']['comment'][i].comment, text['commentList']['comment'][i].commenter);     
                 }
             };  
         };

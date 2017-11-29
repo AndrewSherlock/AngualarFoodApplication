@@ -1,0 +1,30 @@
+{
+    "commentList": {
+        "comment": [{
+                "rating": "1",
+                "comment": "Where do i begin? The food was cold and took ages to arrive. The staff were rude and did not do much to resolve a situation that arised. Avoid at all costs.",
+                "commenter": "Unhappy Customer"
+            },
+            {
+                "rating": "3",
+                "comment": "Was decent for the money but not recommended.",
+                "commenter": "Paula Molley"
+            },
+            {
+                "rating": "2",
+                "comment": "Poor at best.",
+                "commenter": "Ramona Jenkins"
+            },
+            {
+                "rating": "1",
+                "comment": "Disguisting",
+                "commenter": "Peter Berry"
+            },
+            {
+                "rating": "3",
+                "comment": "It was fine. Not outstanding or poor!",
+                "commenter": "Andrew Sherlock"
+            }
+        ]
+    }
+}

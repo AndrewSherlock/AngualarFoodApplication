@@ -98,17 +98,19 @@ class Restaurant {
         this.town = town;
         this.countyid = countyid;
         this.cuisineType = cuisineType;
-        this.review = [new review_1.Review(3, "tis fine", "peter"), new review_1.Review(1, "meh", "paul")];
+        this.review = [];
         this.openingTimes = [];
         this.score = this.getAverageReviewScore();
         this.menu = new Menu();
         this.getOpeningTimesFromFile();
+        this.getReviewsFromFile();
+        this.score = this.getAverageReviewScore();
     }
     getReviewsFromFile() {
         let text;
         var self = this;
         var request = new XMLHttpRequest();
-        request.open('GET', '../../json/openingTimes' + this.id + '.json', true);
+        request.open('GET', '../../json/comments/comments' + this.id + '.json', true);
         request.responseType = 'blob';
         request.onload = function () {
             var reader = new FileReader();
@@ -116,8 +118,8 @@ class Restaurant {
             reader.onload = (e) => {
                 text = reader.result;
                 text = JSON.parse(text);
-                for (let i = 0; i < text['openingTimes']['open'].length; i++) {
-                    self.openingTimes[i] = text['openingTimes']['open'][i].value;
+                for (let i = 0; i < text['commentList']['comment'].length; i++) {
+                    self.review[i] = new review_1.Review(text['commentList']['comment'][i].rating, text['commentList']['comment'][i].comment, text['commentList']['comment'][i].commenter);
                 }
             };
         };

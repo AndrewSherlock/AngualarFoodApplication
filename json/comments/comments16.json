@@ -1,0 +1,25 @@
+{
+    "commentList": {
+        "comment": [{
+                "rating": "3",
+                "comment": "Was ok, The food was ok. The price could of been cheaper.",
+                "commenter": "Paul Simons"
+            },
+            {
+                "rating": "5",
+                "comment": "Had a great meal here, the staff were very accomadating. Would eat at again",
+                "commenter": "Tony Tiger"
+            },
+            {
+                "rating": "4",
+                "comment": "Not a bad meal at all, Would come back to.",
+                "commenter": "Jenny Adams"
+            },
+            {
+                "rating": "4",
+                "comment": "I enjoyed the meal. The staff were friendly and the place was very clean. 5 Stars!!!",
+                "commenter": "William P"
+            }
+        ]
+    }
+}

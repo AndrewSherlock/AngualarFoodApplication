@@ -1,0 +1,14 @@
+{ 
+    "openingTimes":
+    {
+        "open":[    
+            {"value":"Monday: 12:00pm - 8:00pm"},   
+            {"value":"Tuesday: 12:00pm - 9:00pm"},
+            {"value":"Wednesday: 12:00pm - 9:00pm"},
+            {"value":"Thursday: 12:00pm - 9:00pm"},
+            {"value":"Friday: 12:00pm - 9:00pm"},
+            {"value":"Saturday: 12:00pm - 2:00am"},
+            {"value":"Sunday: 12:00pm - 12:00pm"}
+        ]
+    }
+}

@@ -1,0 +1,11 @@
+.list_section .thumb{
+   background-color: red;
+    text-align: center;
+}
+
+.list_section.thumb img{
+    height: 1100px;
+    width: 100px;
+    border-top-left-radius: 5px;
+    
+}

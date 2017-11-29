@@ -1,19 +1,23 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "target": "es5",
+    "compilerOptions": {
+        "target": "es2015",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "noImplicitAny": true
+    },
+    "compileOnSave": true,
     "typeRoots": [
-      "node_modules/@types"
+        "node_modules/@types"
     ],
-    "lib": [
-      "es2017",
-      "dom"
+    "types": [
+        "core-js",
+        "node"
+    ],
+    "exclude": [
+        "node_modules/*",
+        "**/*-aot.ts"
     ]
-  }
 }

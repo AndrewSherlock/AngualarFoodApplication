@@ -1,0 +1,37 @@
+<div class="restaurant_list">
+    
+    <h2>Restaurants in {{countyChoice}}</h2>
+
+    <div class="filter_options">
+       <span id="town_input">Town : <input type="text" placeholder="Enter your town" [(ngModel)]="townChoice"></span>
+        <span id="food_choice">Cuisene Type : <input type="text" placeholder="What type of food?(e.g italian)" [(ngModel)]="foodType"></span>
+        <span id="min_rating">Rating : <input type="number" min="0" max="5" [(ngModel)]="rating"></span>
+        <button (click)= "filter(townChoice, foodType, rating)">Filter</button>
+        <button (click)= "clear()">Clear</button>
+    </div>
+    <div class="town_list">
+        <div>
+            <a (click) ="filterByTown('any')">Any</a>
+        </div>
+        <div *ngFor="let t of towns">
+            <a (click) ="filterByTown(t)">{{t}}</a>
+        </div>
+    </div>
+    <div class="rest_list">
+        <table>
+            <tr *ngFor="let rest of restaurants">
+                <div class="restaurant_list_info" >
+                    <img src="../../images/restaurants/{{rest.id}}.jpg" alt="{{rest.name}">
+                    <div class="info_pane">
+                    <a [routerLink]="['/restaurant', rest.id]">{{rest.name}}</a>
+                        <p>{{rest.address}}, {{rest.town}}</p>
+                        <p>{{rest.phone}}</p>
+                    </div>
+                    <review [restaurant] = "rest"></review>
+                </div>
+                <div class="clear"></div>
+            </tr>
+        </table>
+    </div>
+    
+</div>

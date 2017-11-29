@@ -1,0 +1,35 @@
+.list_section .thumb{
+    width: 200px
+    text-align: center;
+}
+
+.list_section .thumb img{
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    border-top-left-radius: 20px; 
+}
+
+.list_section .thumb #bottom{
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    background-color: black;
+    text-align: center;
+    border-bottom-right-radius: 20px;
+}
+
+.list_section .thumb #bottom a
+{
+    color: antiquewhite;
+}
+
+.list_section .thumb #bottom a:hover
+{
+    color: aquamarine;
+    text-decoration: none;
+}
+
+
+

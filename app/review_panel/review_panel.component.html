@@ -1,0 +1,16 @@
+<div class="review_section">
+    <table>
+       <tr *ngFor="let r of reviews">
+            <p>Rating : {{r.numOfStars}} By : {{r.commenter}}</p>
+            <p>Comment : {{r.comment}}</p>
+        </tr>
+    </table>
+    
+    <div class="add_review">
+        <h4>Add your review</h4>
+        <input type="number" min="0" max="5" [(ngModel)]="rating">
+        <input type="text" placeholder="add your comment in here" [(ngModel)]="comment">
+        <input type="text" placeholder="your name" [(ngModel)]="commenter">
+        <button (click)="addReview(rating,comment, commenter)">Submit</button>
+    </div>
+</div>

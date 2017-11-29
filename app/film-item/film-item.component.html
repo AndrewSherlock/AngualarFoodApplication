@@ -1,0 +1,9 @@
+<div class="thumbnail">
+    <p>{{film.title}}</p>
+    <img [src]="imageUrl" alt="{{film.title}}">
+    <p>{{film.blurb}}</p>
+    <p>€{{film.price}}</p>
+    
+    <review [score]=film.score></review>
+
+</div>

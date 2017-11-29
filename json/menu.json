@@ -1,0 +1,40 @@
+{ 
+    "menu":
+    {
+        "starters":[  
+            {"name":"Italian Bruschetta", "price":"3.90"},
+            {"name":"Chorizo & Prawn Picante", "price":"5.25"},
+            {"name":"Fish Cake", "price":"4.20"},
+            {"name":"East Coast Mussels", "price":"6.00"},
+            {"name":"Chicken wings", "price":"6.75"},
+            {"name":"Brie Cheese", "price":"6.10"},
+            {"name":"Antipasti", "price":"6.50"}
+           
+        ],
+        
+        "main":[    
+            {"name":"Wicklow Lamb Chops", "price":"23.90"},
+            {"name":"Medallions of Beef", "price":"25.25"},
+            {"name":"Sirlion Steak", "price":"24.20"},
+            {"name":"Beef Burger", "price":"17.00"},
+            {"name":"Tagliatelle Primavera", "price":"16.75"},
+            {"name":"Seabass", "price":"20.10"},
+            {"name":"Pizza Margherita", "price":"12.50"}   
+        ],
+        
+        "deserts":[    
+            {"name":"Selection of Irish Farmhouse Cheeses", "price":"13.90"},
+            {"name":"Oreo Cookie and Vanilla Bean Cheesecake", "price":"10.25"},
+            {"name":"Apple Crumble Pie", "price":"9.20"},
+            {"name":"Christmas Trifle with Raspberry Roulade", "price":"11.00"}
+        ],
+        
+        "drinks":[    
+            {"name":"Coors Light", "price":"3.90"},
+            {"name":"Soda", "price":"2.25"},
+            {"name":"Tea", "price":"2.50"},
+            {"name":"Coffee", "price":"3.00"}
+        ]
+          
+    }
+}

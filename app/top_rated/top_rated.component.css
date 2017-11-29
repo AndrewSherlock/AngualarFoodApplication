@@ -1,0 +1,35 @@
+.top_rated .thumb{
+    width: 200px
+    text-align: center;
+}
+
+.top_rated .thumb img{
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    border-top-left-radius: 20px; 
+}
+
+.top_rated .thumb #bottom{
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    background-color: black;
+    text-align: center;
+    border-bottom-right-radius: 20px;
+}
+
+.top_rated .thumb #bottom a
+{
+    color: antiquewhite;
+}
+
+.top_rated .thumb #bottom a:hover
+{
+    color: aquamarine;
+    text-decoration: none;
+}
+
+
+

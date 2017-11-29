@@ -1,0 +1,31 @@
+<div class="menu_page">
+    <h3> Menu </h3>
+    <h5>Starters</h5>
+    <table>
+        <tr *ngFor="let starter of menu.starters">
+            <td>{{starter.name}}</td>
+            <td>€{{starter.price}}</td>
+        </tr>
+    </table>
+     <h5>Main Courses</h5>
+    <table>
+        <tr *ngFor="let main of menu.dinners">
+            <td>{{main.name}}</td>
+            <td>€{{main.price}}</td>
+        </tr>
+    </table>
+     <h5>Deserts</h5>
+    <table>
+        <tr *ngFor="let desert of menu.deserts">
+            <td>{{desert.name}}</td>
+            <td>€{{desert.price}}</td>
+        </tr>
+    </table>
+     <h5>Drinks</h5>
+    <table>
+        <tr *ngFor="let drink of menu.drinks">
+            <td>{{drink.name}}</td>
+            <td>€{{drink.price}}</td>
+        </tr>
+    </table>
+</div>

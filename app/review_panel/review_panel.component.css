@@ -1,0 +1,7 @@
+.review_section{
+    margin-left: 20px;
+}
+
+.review_section tr{
+    border-top: 2px solid black;
+}

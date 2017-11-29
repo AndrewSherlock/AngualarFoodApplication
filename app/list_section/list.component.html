@@ -1,0 +1,14 @@
+<div class="list_section">
+    
+    <div *ngFor="let county of counties" class ="col-xs-4 thumb">
+        <img [src] = "county.imageLink" alt="{{county.countyName}}"/>
+        
+        <div id="bottom">
+             <p><a [routerLink] = "['/county', county.countyId]">{{county.countyName}}</a></p>
+             <p><a [routerLink] ="['/county', county.countyId]">Click here for list of towns</a></p>
+        </div>
+    </div>
+           
+    
+    
+</div>

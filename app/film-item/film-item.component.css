@@ -1,0 +1,19 @@
+﻿.thumbnail {
+    padding: 10px;
+    background-color: lightblue;
+}
+
+.thumbnail img {
+    height: 200px;
+    width: 100%;
+}
+
+.thumbnail .caption {
+    height: 100px;
+    overflow: hidden;
+    padding: 0px;
+}
+
+.star{
+    color: goldenrod;
+}

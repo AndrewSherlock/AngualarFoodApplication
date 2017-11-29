@@ -1,3 +1,8 @@
+.countyListHeader h1{
+    text-align: center;
+    font-family: 'Vollkorn SC', serif;
+}
+
 .list_section .thumb{
     width: 200px
     text-align: center;
@@ -8,28 +13,32 @@
     margin: 0 auto;
     width: 200px;
     height: 200px;
+    border: 2px solid black;
     border-top-left-radius: 20px; 
 }
 
 .list_section .thumb #bottom{
     display: block;
-    margin: 0 auto;
+    margin-left:auto;
+    margin-right: auto;
+    margin-bottom: 30px;
     width: 200px;
+    height: 40px;
     background-color: black;
     text-align: center;
     border-bottom-right-radius: 20px;
+    padding-top: 10px;
 }
 
 .list_section .thumb #bottom a
 {
+    font-family: 'Vollkorn SC', serif;
     color: antiquewhite;
 }
 
 .list_section .thumb #bottom a:hover
 {
-    color: aquamarine;
+    color: chocolate;
     text-decoration: none;
 }
-
-
 

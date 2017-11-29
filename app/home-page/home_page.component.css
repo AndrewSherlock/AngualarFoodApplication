@@ -1,5 +1,7 @@
 .home_page{
     margin-top: -5%;
+    z-index: -30;
+    background-color:azure;
 }
 
 .home_page .slideShow #myCarousel .carousel-inner .active .carousel-caption{
@@ -12,7 +14,6 @@
 }
 
 .container .row{
-    background-color:azure;
     width: 70%;
     margin: 60px auto;
 }
@@ -30,7 +31,7 @@
     font-style: italic;
     color: chocolate;
     text-align: center;
-    font-size: 3em;
+    font-size: 2.5em;
 }
 
 
@@ -40,6 +41,8 @@
     color: chocolate;
     font-weight: 400;
     font-size: 3em;
+    margin-left: 5%;
+    margin-top: 6%;
 }
 
 .container .row .col-centered .designer p{
@@ -49,8 +52,9 @@
     font-size: 1.2em;
 }
 
-.container .row .col-centered .designer .sign{
+.container .row .col-centered .designer #sign{
     font-family: 'Pacifico', cursive;
+    text-decoration: underline;
 }
 
 .container .row .col-centered .designer img{

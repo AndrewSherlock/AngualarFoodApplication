@@ -19,6 +19,7 @@ let RestaurantService = class RestaurantService {
         this.restaurantList[1] = new Restaurant(1, "La Bucca", "Main street", "01-2221", "Ashbourne", 0, "Italian");
         this.restaurantList[2] = new Restaurant(2, "Restaurant on dublin", "Main street", "01-2222", "Dunboyne", 1, "Fast food");
         this.restaurantList[3] = new Restaurant(3, "Restaurant in kildare", "Main street", "01-2222", "Dunboyne", 2, "Fast food");
+        this.getJsonText();
     }
     getJsonText() {
         let text;

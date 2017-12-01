@@ -15,11 +15,6 @@ let ReaderService = class ReaderService {
     constructor(http) {
         this.http = http;
     }
-    GetAllRestaurants() {
-        return this.http.get('../../json/restaurants.json').map(res => {
-            return res.json();
-        });
-    }
 };
 ReaderService = __decorate([
     core_1.Injectable(),

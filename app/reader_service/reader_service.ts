@@ -10,7 +10,7 @@ export class ReaderService
     constructor(private http: HttpClient){
         
     }
-    
+    /*
     GetAllRestaurants(): Observable<any[]>
     {
         return this.http.get('../../json/restaurants.json').map(
@@ -18,5 +18,5 @@ export class ReaderService
                 return res.json();
             }
         )
-    }
+    } */
 }

@@ -22,7 +22,9 @@ const menu_display_component_1 = require("./menu_component/menu_display.componen
 const top_rated_component_1 = require("./top_rated/top_rated.component");
 const score_component_1 = require("./score/score.component");
 const review_panel_component_1 = require("./review_panel/review_panel.component");
+const map_component_1 = require("./map_component/map.component");
 const footer_component_1 = require("./footer/footer.component");
+const core_2 = require("@agm/core");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -38,9 +40,12 @@ AppModule = __decorate([
                 { path: 'contact', component: contact_component_1.default },
                 { path: 'county/:id', component: restaurant_choice_component_1.default },
                 { path: 'restaurant/:restid', component: restaurantdetail_component_1.default }
-            ])
+            ]),
+            core_2.AgmCoreModule.forRoot({
+                apiKey: 'AIzaSyA-rMwC85jsgThQ0K3xx64bIZLA2K8bHYQ'
+            })
         ],
-        declarations: [application_component_1.default, header_component_1.default, home_page_component_1.default, county_list_component_1.default, contact_component_1.default, list_component_1.default, restaurant_choice_component_1.default, footer_component_1.default, score_component_1.default, restaurantdetail_component_1.default, review_panel_component_1.default, menu_display_component_1.default, top_rated_component_1.default],
+        declarations: [application_component_1.default, header_component_1.default, home_page_component_1.default, county_list_component_1.default, contact_component_1.default, list_component_1.default, restaurant_choice_component_1.default, footer_component_1.default, score_component_1.default, restaurantdetail_component_1.default, review_panel_component_1.default, menu_display_component_1.default, top_rated_component_1.default, map_component_1.default],
         bootstrap: [application_component_1.default]
     })
 ], AppModule);

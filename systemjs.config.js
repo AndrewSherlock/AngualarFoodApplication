@@ -9,7 +9,9 @@ System.config({
         '@angular/platform-browser':          'node_modules/@angular/platform-browser/bundles/platform-browser.umd.js',
         '@angular/platform-browser-dynamic':  'node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
          '@angular/router':                'node_modules/@angular/router/bundles/router.umd.js',
-          '@angular/forms':                     'node_modules/@angular/forms/bundles/forms.umd.js'
+          '@angular/forms':                     'node_modules/@angular/forms/bundles/forms.umd.js',
+        '@agm/core':
+        'node_modules/@agm/core/core.umd.js'
       },
 
       packages: {

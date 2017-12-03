@@ -1,0 +1,24 @@
+.menu_page{
+    border: 2px solid black;
+    padding: 10px;
+    background-color:aliceblue;
+    margin-top: 20px;
+}
+
+.menu_page h3, h5{
+    text-align: center;
+}
+
+.menu_page .left{
+    width: 120%;
+    font-size: 1.5em; 
+}
+
+.menu_page .right{
+    margin-left: 40%;
+    font-size: 1.2em; 
+}
+
+.menu_page tr{
+    border-bottom: 1px solid black;
+}

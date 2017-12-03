@@ -20,6 +20,7 @@ export default class RestaurantChoiceComponent implements OnInit, OnDestroy
     private choiceId : number;
     
     private towns: String[] = [];
+    private foodTypes: String[] = [];
     
     subscriberParams : any;
     subscriberData: any;
@@ -36,9 +37,40 @@ export default class RestaurantChoiceComponent implements OnInit, OnDestroy
         
         let restaurant_service = new RestaurantService(); 
         this.restaurants = restaurant_service.getRestaurantByCounty(this.choiceId); 
-        console.log(restaurant_service.getRestaurantList());
+       
         this.towns = this.getListOfTowns();
+        this.getFoodTypes();
+        
+        for(let x = 0; x < this.foodTypes.length; x++)
+        {
+            console.log(this.foodTypes[x]);
+        }
             
+    }
+    
+    getFoodTypes()
+    {
+        let types : String[] = [];
+        let found: boolean = false;
+        
+        for(let x = 0; x < this.restaurants.length; x++)
+        {
+            found = false;
+            
+            for(let i = 0; i < types.length; i++)
+            {
+                if(types[i] == this.restaurants[x].cuisineType)
+                {
+                    found = true;
+                    break;
+                }
+            }
+            
+            if(!found)
+                types[types.length] = this.restaurants[x].cuisineType;
+        }
+        
+        this.foodTypes = types;
     }
     
     filterByTown(town : String)
@@ -67,27 +99,34 @@ export default class RestaurantChoiceComponent implements OnInit, OnDestroy
     getListOfTowns() : String[]
     {
         let temp : String[] = [];
+        let found : boolean = false;
+        
         
         for(let i = 0; i < this.restaurants.length; i++)
         {
+            found = false;
+            
             for(let p = 0; p < temp.length; p++)
             {
-                if(temp[p] == this.restaurants[i].town)
+                
+                if(temp[p].toLowerCase() == this.restaurants[i].town.toLowerCase())
                 {
+                    found = true;
                     break;
                 }
             }
             
-            temp[temp.length] = this.restaurants[i].town;
+            if(!found)
+                temp[temp.length] = this.restaurants[i].town;
         }
-        
+            
         return temp;
     }
     
     
-    filter(townChoice : String, foodType : String, rating: number)
+    filter(townChoice : String, rating: number)
     {
-        if(townChoice == undefined && foodType == undefined && rating == undefined){
+        if(townChoice == undefined && rating == undefined){
             alert("Nothing entered for search");
             return;
         }
@@ -109,6 +148,38 @@ export default class RestaurantChoiceComponent implements OnInit, OnDestroy
             
             currentRestaurants = temp;
         }  
+            
+        if(rating != undefined && !isNaN(rating))
+        {
+            let temp : Restaurant[] = [];
+            
+            
+            
+            for(let i = 0; i < currentRestaurants.length;i++)
+            { 
+                if(currentRestaurants[i].getScore() >= rating)
+                {
+                    temp[temp.length] = currentRestaurants[i];
+                }
+            }
+            
+            currentRestaurants = temp;
+        }
+        
+        if(currentRestaurants.length > 0){
+            this.restaurants = currentRestaurants;
+        } else{
+            alert("No restaurants found!");
+            this.clear();
+        }
+    }
+    
+    filterByFoodType(foodType: String)
+    {
+        this.clear();
+        let currentRestaurants : Restaurant[] = this.restaurants;
+        
+        console.log(foodType);
         
         if(foodType != undefined)
         {
@@ -126,27 +197,7 @@ export default class RestaurantChoiceComponent implements OnInit, OnDestroy
             currentRestaurants = temp;
         }
         
-        if(rating != undefined && !isNaN(rating))
-        {
-            let temp : Restaurant[] = [];
-            
-            for(let i = 0; i < currentRestaurants.length;i++)
-            {
-                if(currentRestaurants[i].getAverageReviewScore() >= rating)
-                {
-                    temp[temp.length] = currentRestaurants[i];
-                }
-            }
-            
-            currentRestaurants = temp;
-        }
-        
-        if(currentRestaurants.length > 0){
-            this.restaurants = currentRestaurants;
-        } else{
-            alert("No restaurants found!");
-            this.clear();
-        }
+        this.restaurants = currentRestaurants;
     }
     
     clear()

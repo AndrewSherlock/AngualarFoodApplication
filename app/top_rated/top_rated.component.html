@@ -1,13 +1,14 @@
 <div class="top_rated">
-      
+      <h2>Top Restaurants</h2>
     <div *ngFor="let top of top_ranked" class ="col-xs-4 thumb">
          <img src="../../images/restaurants/{{top.id}}.jpg" alt="{{top.name}">
         <div id="bottom">
              <div class="info_pane">
                  <p><a [routerLink]="['/restaurant', top.id]">{{top.name}}</a></p>
                  <p>{{top.town}}, {{top.county}}</p>
-                 <p>Rating : {{top.score}}</p>
+                 <p>Rating : {{top.score | number : '1.1-1'}}</p>
         </div>
     </div>
     
+</div>
 </div>

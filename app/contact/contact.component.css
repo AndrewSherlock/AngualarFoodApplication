@@ -1,0 +1,26 @@
+.contact_page{
+     font-family: 'Vollkorn SC', serif;
+    background-color: azure;
+    height: 570px;
+    font-size: 1.5em;
+}
+
+.contact_page h2{
+    text-align: center;
+}
+
+.contact_page form{
+    margin: 0 auto;
+    width: 50%;
+}
+
+.contact_page label{
+    width: 10%;
+    margin-right: 5%;
+    margin-bottom: 2%;
+}
+
+.contact_page .button{
+    margin: 20px;
+    margin-left: 30%;
+}

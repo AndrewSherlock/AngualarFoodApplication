@@ -14,6 +14,7 @@ FooterComponent = __decorate([
     core_1.Component({
         selector: 'footerArea',
         templateUrl: 'app/footer/footer.component.html',
+        styleUrls: ['app/footer/footer.css']
     })
 ], FooterComponent);
 exports.default = FooterComponent;

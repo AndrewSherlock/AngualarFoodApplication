@@ -18,7 +18,7 @@ export default class TopRatedComponent implements OnInit{
     {
         let rest_service = new RestaurantService();
         this.top_ranked = rest_service.getRestaurantByRanking();
-        
+      
     }
 
 }

@@ -1,0 +1,14 @@
+.footer{
+    text-align: center;
+    font-family: 'Vollkorn SC', serif;
+    background-color: bisque;
+    border-top: 2px solid black;
+   
+    position: relative;
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    overflow:hidden;
+    
+}

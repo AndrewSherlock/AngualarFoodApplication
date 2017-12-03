@@ -17,7 +17,7 @@ export default class ScoreComponent implements OnInit{
     ngOnInit()
     {
         
-       this.star = this.restaurant.getAverageReviewScore();
+      this.star = this.restaurant.getScore();
     }
 
 }

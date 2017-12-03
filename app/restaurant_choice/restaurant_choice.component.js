@@ -17,6 +17,7 @@ let RestaurantChoiceComponent = class RestaurantChoiceComponent {
         this.route = route;
         this.restaurants = [];
         this.towns = [];
+        this.foodTypes = [];
     }
     ngOnInit() {
         this.subscriberParams = this.route.params.subscribe(params => {
@@ -25,8 +26,27 @@ let RestaurantChoiceComponent = class RestaurantChoiceComponent {
         });
         let restaurant_service = new restaurant_service_1.RestaurantService();
         this.restaurants = restaurant_service.getRestaurantByCounty(this.choiceId);
-        console.log(restaurant_service.getRestaurantList());
         this.towns = this.getListOfTowns();
+        this.getFoodTypes();
+        for (let x = 0; x < this.foodTypes.length; x++) {
+            console.log(this.foodTypes[x]);
+        }
+    }
+    getFoodTypes() {
+        let types = [];
+        let found = false;
+        for (let x = 0; x < this.restaurants.length; x++) {
+            found = false;
+            for (let i = 0; i < types.length; i++) {
+                if (types[i] == this.restaurants[x].cuisineType) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found)
+                types[types.length] = this.restaurants[x].cuisineType;
+        }
+        this.foodTypes = types;
     }
     filterByTown(town) {
         this.clear();
@@ -45,18 +65,22 @@ let RestaurantChoiceComponent = class RestaurantChoiceComponent {
     }
     getListOfTowns() {
         let temp = [];
+        let found = false;
         for (let i = 0; i < this.restaurants.length; i++) {
+            found = false;
             for (let p = 0; p < temp.length; p++) {
-                if (temp[p] == this.restaurants[i].town) {
+                if (temp[p].toLowerCase() == this.restaurants[i].town.toLowerCase()) {
+                    found = true;
                     break;
                 }
             }
-            temp[temp.length] = this.restaurants[i].town;
+            if (!found)
+                temp[temp.length] = this.restaurants[i].town;
         }
         return temp;
     }
-    filter(townChoice, foodType, rating) {
-        if (townChoice == undefined && foodType == undefined && rating == undefined) {
+    filter(townChoice, rating) {
+        if (townChoice == undefined && rating == undefined) {
             alert("Nothing entered for search");
             return;
         }
@@ -71,20 +95,10 @@ let RestaurantChoiceComponent = class RestaurantChoiceComponent {
             }
             currentRestaurants = temp;
         }
-        if (foodType != undefined) {
-            let temp = [];
-            for (let i = 0; i < currentRestaurants.length; i++) {
-                console.log(currentRestaurants[i].cuisineType, foodType);
-                if (currentRestaurants[i].cuisineType.toLowerCase() == foodType.toLowerCase()) {
-                    temp[temp.length] = currentRestaurants[i];
-                }
-            }
-            currentRestaurants = temp;
-        }
         if (rating != undefined && !isNaN(rating)) {
             let temp = [];
             for (let i = 0; i < currentRestaurants.length; i++) {
-                if (currentRestaurants[i].getAverageReviewScore() >= rating) {
+                if (currentRestaurants[i].getScore() >= rating) {
                     temp[temp.length] = currentRestaurants[i];
                 }
             }
@@ -97,6 +111,22 @@ let RestaurantChoiceComponent = class RestaurantChoiceComponent {
             alert("No restaurants found!");
             this.clear();
         }
+    }
+    filterByFoodType(foodType) {
+        this.clear();
+        let currentRestaurants = this.restaurants;
+        console.log(foodType);
+        if (foodType != undefined) {
+            let temp = [];
+            for (let i = 0; i < currentRestaurants.length; i++) {
+                console.log(currentRestaurants[i].cuisineType, foodType);
+                if (currentRestaurants[i].cuisineType.toLowerCase() == foodType.toLowerCase()) {
+                    temp[temp.length] = currentRestaurants[i];
+                }
+            }
+            currentRestaurants = temp;
+        }
+        this.restaurants = currentRestaurants;
     }
     clear() {
         let restaurant_service = new restaurant_service_1.RestaurantService();

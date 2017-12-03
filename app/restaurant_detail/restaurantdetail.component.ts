@@ -17,6 +17,7 @@ export default class RestaurantDetailComponent implements OnInit, OnDestroy{
     
     private restaurantId : number;
     private restaurant : Restaurant;
+    private show_toggle = 0;
     
     constructor(private route: ActivatedRoute){}
     
@@ -29,7 +30,13 @@ export default class RestaurantDetailComponent implements OnInit, OnDestroy{
         let rest_service = new RestaurantService();
         
         this.restaurant = rest_service.getRestaurantById(this.restaurantId);
-        console.log(this.restaurant);
+        this.restaurant.getAverageReviewScore();
+   
+    }
+    
+    toggle(value : number)
+    {
+        this.show_toggle= value;
     }
     
     ngOnDestroy()

@@ -13,8 +13,8 @@ ContactComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
         selector: 'contact',
-        templateUrl: './contact.component.html'
-        //styleUrls:['./home_page.component.css'];
+        templateUrl: './contact.component.html',
+        styleUrls: ['./contact.component.css']
     })
 ], ContactComponent);
 exports.default = ContactComponent;

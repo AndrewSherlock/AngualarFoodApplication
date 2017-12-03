@@ -15,7 +15,7 @@
              {
                 "id":"1",
                 "name":"Holly's Kitchen",
-                "address":"Hill of Tara",
+                "address":"Main Street",
                 "phone":"046-9015234",
                 "town": "Navan",
                 "countyid":"0",
@@ -55,7 +55,7 @@
               {
                 "id":"5",
                 "name":"La Vida Restaurant Ratoath",
-                "address":"The Courtayrd, Main Street",
+                "address":"The Courtyard, Main Street",
                 "phone":"01-8252421",
                 "town": "Ratoath",
                 "countyid":"0",

@@ -1,24 +1,45 @@
 <div class="restaurantWrapper">
+    
     <div class="left_info">
         <h2>{{restaurant.name}}</h2>
         <div class ="rest_info">
             <p>Address : {{restaurant.address}}, {{restaurant.town}}, </p>
             <p>Phone : {{restaurant.phone}}</p>
             <p>Cuisine type : {{restaurant.cuisineType}}</p>
-            <p>Rating : {{restaurant.score}}</p>
-            <p>Average item price {{restaurant.menu.menuAvg}}</p>
+            <p>Rating : {{restaurant.score | number : '1.1-1'}} / 5</p>
+            <p>Average item price {{restaurant.menu.menuAvg | currency:'€'}}</p>          
         </div>
+        
+         <div class="fac">
+            <h5>Facilities</h5>
+            <span class="baby" *ngIf="restaurant.babyChanging"><img src="../../images/baby.png"></span>
+            <span class="wifi" *ngIf="restaurant.wifi"><img src="../../images/wifi.png"></span>
+        </div>
+       
+        <div class="profile_choice">
+            <input type="button" value="Menu" (click)="toggle(0)">
+            <input type="button" value="Comments" (click)="toggle(1)">
+            <input type="button" value="Map" (click)="toggle(2)">
+        </div>
+        
+        <div class="menu" *ngIf="show_toggle == 0">
             <menu_display [menu]="restaurant.menu"></menu_display>
-    
-        <div class="reviews">
+        </div>
+        <div class="reviews" *ngIf="show_toggle == 1">
             <review_pane [restaurant] = "restaurant"></review_pane>
         </div>
+          <div class="reviews" *ngIf="show_toggle == 2">
+            <map_section [restaurant] = "restaurant"></map_section>
+        </div>
     </div>
+    
     <div class="right_info">
        <img src="../../images/restaurants/{{restaurant.id}}.jpg" alt ="{{restaurant.name}}"> 
         <div class="opening_times">
             <h3>Opening times</h3>
-            <div *ngFor="let opening of restaurant.openingTimes">{{opening}}</div>
+            <div class="times" *ngFor="let opening of restaurant.openingTimes">{{opening}}</div>
+            <br>
+            <br>
         </div>
     </div>
     <div class="clear"></div>

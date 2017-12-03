@@ -19,8 +19,11 @@ import TopRatedComponent from './top_rated/top_rated.component'
 
 import ScoreComponent from './score/score.component';
 import ReviewPanelComponent from './review_panel/review_panel.component';
+import MapSection from './map_component/map.component';
 
 import FooterComponent from './footer/footer.component';
+
+import { AgmCoreModule } from '@agm/core';
 
 
 
@@ -36,10 +39,14 @@ import FooterComponent from './footer/footer.component';
             {path: 'contact', component: ContactComponent},
             {path: 'county/:id', component: RestaurantChoiceComponent},
             {path:'restaurant/:restid', component: RestaurantDetailComponent}
-        ])
+        ]),
+        
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyA-rMwC85jsgThQ0K3xx64bIZLA2K8bHYQ'
+        })
 
              ],
-    declarations: [ApplicationComponent, HeaderComponent, HomePageComponent, CountyListComponent, ContactComponent, ListComponent, RestaurantChoiceComponent, FooterComponent, ScoreComponent, RestaurantDetailComponent, ReviewPanelComponent, MenuDisplayComponent, TopRatedComponent],
+    declarations: [ApplicationComponent, HeaderComponent, HomePageComponent, CountyListComponent, ContactComponent, ListComponent, RestaurantChoiceComponent, FooterComponent, ScoreComponent, RestaurantDetailComponent, ReviewPanelComponent, MenuDisplayComponent, TopRatedComponent, MapSection],
     bootstrap: [ApplicationComponent]
 })
 export default class AppModule {}

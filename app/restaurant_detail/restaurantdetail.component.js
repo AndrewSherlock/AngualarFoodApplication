@@ -15,6 +15,7 @@ const restaurant_service_1 = require("../restaurant_service/restaurant_service")
 let RestaurantDetailComponent = class RestaurantDetailComponent {
     constructor(route) {
         this.route = route;
+        this.show_toggle = 0;
     }
     ngOnInit() {
         this.subscriberParams = this.route.params.subscribe(params => {
@@ -22,7 +23,10 @@ let RestaurantDetailComponent = class RestaurantDetailComponent {
         });
         let rest_service = new restaurant_service_1.RestaurantService();
         this.restaurant = rest_service.getRestaurantById(this.restaurantId);
-        console.log(this.restaurant);
+        this.restaurant.getAverageReviewScore();
+    }
+    toggle(value) {
+        this.show_toggle = value;
     }
     ngOnDestroy() {
         if (this.subscriberParams != null)

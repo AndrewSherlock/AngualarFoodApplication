@@ -1,12 +1,25 @@
-.top_rated .thumb{
-    width: 200px
+.top_rated{
+    font-family: 'Vollkorn SC', serif;
+    background-color: azure;
+    margin-bottom: 100px;
+}
+
+.top_rated h2
+{
     text-align: center;
+    margin-bottom: 30px;
+}
+
+.top_rated .thumb{
+    font-family: 'Vollkorn SC', serif;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .top_rated .thumb img{
     display: block;
     margin: 0 auto;
-    width: 200px;
+    width: 63%;
     height: 200px;
     border-top-left-radius: 20px; 
 }
@@ -14,14 +27,16 @@
 .top_rated .thumb #bottom{
     display: block;
     margin: 0 auto;
-    width: 200px;
+    width: 63%;
     background-color: black;
     text-align: center;
     border-bottom-right-radius: 20px;
 }
 
-.top_rated .thumb #bottom a
+.top_rated .thumb #bottom a, p
 {
+    font-size: 1.2em;
+    margin-bottom: 0;
     color: antiquewhite;
 }
 

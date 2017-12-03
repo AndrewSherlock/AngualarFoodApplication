@@ -9,24 +9,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-// Implement ScoreComponent here.
 const core_1 = require("@angular/core");
 const restaurant_service_1 = require("../restaurant_service/restaurant_service");
-let ScoreComponent = class ScoreComponent {
+let MapSection = class MapSection {
+    constructor() {
+    }
     ngOnInit() {
-        this.star = this.restaurant.getScore();
+        this.lat = this.restaurant.lat;
+        this.long = this.restaurant.long;
     }
 };
 __decorate([
     core_1.Input(),
     __metadata("design:type", restaurant_service_1.Restaurant)
-], ScoreComponent.prototype, "restaurant", void 0);
-ScoreComponent = __decorate([
+], MapSection.prototype, "restaurant", void 0);
+MapSection = __decorate([
     core_1.Component({
         moduleId: module.id,
-        selector: 'review',
-        templateUrl: './score.component.html',
-    })
-], ScoreComponent);
-exports.default = ScoreComponent;
-//# sourceMappingURL=score.component.js.map
+        selector: 'map_section',
+        templateUrl: './map.component.html',
+        styleUrls: ['./map.component.css']
+    }),
+    __metadata("design:paramtypes", [])
+], MapSection);
+exports.default = MapSection;
+//# sourceMappingURL=map.component.js.map

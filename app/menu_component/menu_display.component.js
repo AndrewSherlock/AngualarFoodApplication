@@ -24,6 +24,7 @@ MenuDisplayComponent = __decorate([
         moduleId: module.id,
         selector: 'menu_display',
         templateUrl: './menu_display.component.html',
+        styleUrls: ['./menu_display.component.css']
     })
 ], MenuDisplayComponent);
 exports.default = MenuDisplayComponent;
